@@ -1,0 +1,64 @@
+//
+//  weibo.pch
+//  weibo
+//
+//  Created by zsm on 14-11-11.
+//  Copyright (c) 2014年 zsm. All rights reserved.
+//
+
+#ifndef weibo_weibo_pch
+#define weibo_weibo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// 常用的类库
+#import "WeiboSDK.h"
+#import "MMDrawerController.h"
+#import "UIView+ViewController.h"
+#import "UIViewExt.h"
+#import "ThemeManager.h"
+#import "ThemeControl.h"
+#import "DataService.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "MJRefresh.h"
+
+// 获取设备屏幕的物理尺寸
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+// 当前SDK版本
+#define kVersion [[UIDevice currentDevice].systemVersion floatValue]
+
+// 新浪微博授权
+#define kAppKey         @"3938471635"
+#define kRedirectURI    @"http://www.iphonetrain.com"
+#define kWeiboToken @"kWeiboToken"
+
+// 微博借口地址
+#define JK_home_timeline @"2/statuses/home_timeline.json"
+#define JK_unread_count @"2/remind/unread_count.json"
+#define JK_comments_show @"2/comments/show.json"
+#define JK_users_show @"2/users/show.json"
+#define JK_nearby_timeline @"2/place/nearby_timeline.json"
+#define JK_nearby_pois @"2/place/nearby/pois.json"
+#define JK_statuses_update @"2/statuses/update.json"
+#define JK_statuses_upload @"2/statuses/upload.json"
+//用户关注的接口
+#define WB_JK_friends @"friendships/friends.json"
+//用户粉丝的接口
+#define WB_JK_followers @"friendships/followers.json"
+
+// 主题的KEY
+#define kThemeName @"kThemeName"
+#define kThemeNotification @"kThemeNotification"
+
+// 大小图模式的切换
+#define kImageScale @"kImageScale"
+#define kWeiboImageViewDidChangedNotification @"kWeiboImageViewDidChangedNotification"
+#define kWeibImageViewHeight ([[[NSUserDefaults standardUserDefaults] objectForKey:kImageScale] integerValue] == 0 ? 80 : 200)
+
+#endif
